@@ -1,0 +1,3 @@
+[submodule "code/history-through-battleship"]
+	path = code/history-through-battleship
+	url = https://git.heroku.com/history-through-battleship.git
