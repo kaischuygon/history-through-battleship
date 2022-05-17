@@ -1,0 +1,164 @@
+/* popup css is now in its own file */
+
+:root {
+    --side-nav-width: 90%;
+    --grid-dimensions: min(80vw,80vh);
+}
+
+.button-container {
+    width: var(--grid-dimensions);
+    height: var(--grid-dimensions);
+    display: grid;
+    grid-template-columns: repeat(11,1fr);
+    grid-template-rows: repeat(11,1fr);
+    border-right: calc(var(--grid-dimensions) * 0.01) solid #800000;
+    border-bottom: calc(var(--grid-dimensions) * 0.01) solid #800000;
+    opacity: .8;
+    background-image: url("https://t3.ftcdn.net/jpg/02/46/36/00/360_F_246360083_AZXHx2HaOUAr3Tck7pHiGGZHITiU9se9.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.button-container a, .button-container-player a,b {
+    border-top: calc(var(--grid-dimensions) * 0.01) solid #800000;
+    border-left: calc(var(--grid-dimensions) * 0.01) solid #800000;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content button, .footer button {
+    font-size: calc(var(--width) / 30);
+    width: calc(var(--width) * 0.3);
+}
+
+.button-container > b, .button-container-player > b {
+    color: white;
+    font-size: calc(var(--grid-dimensions) / 20);
+    text-align: center;
+}
+
+.button-container > a:hover {
+    opacity: 100;
+    background-color: black;
+}
+
+.no-hover > a:hover {
+    opacity: 100;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  background-color: burlywood;
+  opacity: 1; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+#xbutton {
+  float: right;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #800000;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: wheat;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+#mySidenav {
+    left: 0;
+    text-align: center;
+}
+
+#mySidenav2 {
+    right: 0;
+    text-align: center;
+}
+
+#navships {
+    color:black;
+    font-size: 200%;
+}
+
+#navshipshead {
+    color: black;
+}
+
+.sidenav img {
+    /* display: block; */
+    width: calc(var(--side-nav-width) / 2);
+    height: auto;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.mr-2 {
+    margin-right: 0 !important;
+    margin-bottom: 1vh;
+}
+
+@media only screen and (min-width: 990px) {
+    .content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .mr-2 {
+        margin-right: 1vw !important;
+    }
+
+    :root {
+        --side-nav-width: 25%;
+        --grid-dimensions: max(30vw,30vh);
+    }
+
+    .content button, .footer button {
+        font-size: calc(var(--width) / 60);
+        width: calc(var(--width) / 6);
+    }
+
+    .sidenav img {
+        width: auto;
+    }
+}

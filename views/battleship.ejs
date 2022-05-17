@@ -1,0 +1,505 @@
+<%- include('partials/header') %>
+<link rel="stylesheet" href="css/battleship.css">
+<link rel="stylesheet" href="css/popup.css">
+
+<body onload="createTables()">
+    <div class="popup hover_bkgr_fricc">
+        <span class="helper"></span>
+        <div>
+            <div class="popupCloseButton">&times;</div>
+            <h1 id = "poptitle">Welcome to History Through Battleship!</h1> <br>
+            <p id="popbody"> Rules & Instructions </p>
+            <p id="poprules"> Before the game starts, you must place all your ships, totaling 5 ships. When placed, your ship will begin in the box that you have chosen. It will go right if placed horizontal, or down if placed vertically.</p>
+            <p id="poprules"> On your turn, when firing your cannon, in order for your cannon to properly work, you must answer a trivia question! If answered correctly, your cannon fired without issue. Incorrectly answer your question and it will cause the ship's cannons to malfunction, not allowing you to fire! </p>
+            <p id="poprules"> Destroy the enemy ships first to win your battle!</p>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between px-5"> <!-- Side menus -->
+        <div id="mySidenav" class="sidenav"> <!-- Moved scripts for side navigations to battleship-side-nav.js -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <h2 id="navshipshead">My Ships</h2>
+            <p id="navships">Ships of Size 2</p>
+            <img class="mb-2"  id="ship1" src="img/ship2.png">
+            <form id = "pick-ship1">
+                <div class="form-group">
+                    <label for="columns">CHOOSE A COLUMN:</label>
+                    <select class="form-control w-75 mx-auto w-75 mx-auto" name="columns" id="columns1">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                        <option value="I">I</option>
+                        <option value="J">J</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rows">CHOOSE A ROW:</label>
+                    <select class="form-control w-75 mx-auto" name="rows" id="rows1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="hv">HORIZONTAL OR VERTICAL?</label>
+                    <select class="form-control w-75 mx-auto" name="hv" id="hv1">
+                        <option value="1">Horizontal</option>
+                        <option value="2">Vertical</option>
+                    </select>
+                </div>
+            </form>
+            <button class ="btn htb-button" id="pick-ship1-button1" onclick="placeShip('pick-ship1')">Place Ship</button>
+            <p id="navships">Ships of Size 3</p>
+            <img class="mb-2"  id="ship2" src="img/ship3.png">
+            <img class="mb-2"  id="ship3" src="img/ship3.png">
+            <form id = "pick-ship2">
+                <div class="form-group">
+                    <label for="columns">CHOOSE A COLUMN:</label>
+                    <select class="form-control w-75 mx-auto" name="columns" id="columns2">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                        <option value="I">I</option>
+                        <option value="J">J</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rows">CHOOSE A ROW:</label>
+                    <select class="form-control w-75 mx-auto" name="rows" id="rows2">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="hv">HORIZONTAL OR VERTICAL?</label>
+                    <select class="form-control w-75 mx-auto" name="hv" id="hv2">
+                        <option value="1">Horizontal</option>
+                        <option value="2">Vertical</option>
+                    </select>
+                </div>
+            </form>
+            <button class ="btn htb-button" id="pick-ship1-button2" onclick="placeShip('pick-ship2')">Place First Ship</button>
+            <button class ="btn htb-button" id="pick-ship1-button2-2" onclick="placeShip('pick-ship2-2')">Place Second Ship</button>
+            <p id="navships">Ships of Size 4</p>
+            <img class="mb-2"  id="ship4" src="img/ship4.png">
+            <form id = "pick-ship3" onPlace Ship="">
+                <div class="form-group">
+                    <label for="columns">CHOOSE A COLUMN:</label>
+                    <select class="form-control w-75 mx-auto" name="columns" id="columns3">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                        <option value="I">I</option>
+                        <option value="J">J</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rows">CHOOSE A ROW:</label>
+                    <select class="form-control w-75 mx-auto" name="rows" id="rows3">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="hv">HORIZONTAL OR VERTICAL?</label>
+                    <select class="form-control w-75 mx-auto" name="hv" id="hv3">
+                        <option value="1">Horizontal</option>
+                        <option value="2">Vertical</option>
+                    </select>
+                </div>
+            </form>
+            <button class ="btn htb-button" id="pick-ship1-button3" onclick="placeShip('pick-ship3')">Place Ship</button>
+            <p id="navships">Ships of Size 5</p>
+            <img class="mb-2"  id="ship5" src="img/ship5.png">
+            <form id = "pick-ship4">
+                <div class="form-group">
+                    <label for="columns">CHOOSE A COLUMN:</label>
+                    <select class="form-control w-75 mx-auto" name="columns" id="columns4">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                        <option value="I">I</option>
+                        <option value="J">J</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rows">CHOOSE A ROW:</label>
+                    <select class="form-control w-75 mx-auto" name="rows" id="rows4">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="hv">HORIZONTAL OR VERTICAL?</label>
+                    <select class="form-control w-75 mx-auto" name="hv" id="hv4">
+                        <option value="1">Horizontal</option>
+                        <option value="2">Vertical</option>
+                    </select>
+                </div>
+            </form>
+            <button class ="btn htb-button" id="pick-ship1-button4" onclick="placeShip('pick-ship4')">Place Ship</button>
+        </div>
+        <div id="mySidenav2" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+            <h2 id="navshipshead">Enemy Ships</h2>
+            <p id="navships">Ships of Size 2</p>
+            <img class="mb-2"  id="ship1AI" src="img/ship2.png">
+            <p id="navships">Ships of Size 3</p>
+            <img class="mb-2"  id="ship2AI" src="img/ship3.png">
+            <img class="mb-2"  id="ship3AI" src="img/ship3.png">
+            <p id="navships">Ships of Size 4</p>
+            <img class="mb-2"  id="ship4AI" src="img/ship4.png">
+            <p id="navships">Ships of Size 5</p>
+            <img class="mb-2"  id="ship5AI" src="img/ship5.png">
+        </div>
+    </div>
+
+    <div class="content mt-2"> <!-- Grids -->
+        <div><button id="navbutton" class="btn htb-button mr-2" onclick="openNav()">&#9875; My Ships</button></div>
+        <div class="button-container no-hover mr-2">
+            <b type="button"></b>
+            <b type="button">A</b>
+            <b type="button">B</b>
+            <b type="button">C</b>
+            <b type="button">D</b>
+            <b type="button">E</b>
+            <b type="button">F</b>
+            <b type="button">G</b>
+            <b type="button">H</b>
+            <b type="button">I</b>
+            <b type="button">J</b>
+            <b type="button">1</b>
+            <a id = "A1" ></a>
+            <a id = "B1" ></a>
+            <a id = "C1" ></a>
+            <a id = "D1" ></a>
+            <a id = "E1" ></a>
+            <a id = "F1" ></a>
+            <a id = "G1" ></a>
+            <a id = "H1" ></a>
+            <a id = "I1" ></a>
+            <a id = "J1" ></a>
+            <b type="button">2</b>
+            <a id = "A2" ></a>
+            <a id = "B2" ></a>
+            <a id = "C2" ></a>
+            <a id = "D2" ></a>
+            <a id = "E2" ></a>
+            <a id = "F2" ></a>
+            <a id = "G2" ></a>
+            <a id = "H2" ></a>
+            <a id = "I2" ></a>
+            <a id = "J2" ></a>
+            <b type="button">3</b>
+            <a id = "A3" ></a>
+            <a id = "B3" ></a>
+            <a id = "C3" ></a>
+            <a id = "D3" ></a>
+            <a id = "E3" ></a>
+            <a id = "F3" ></a>
+            <a id = "G3" ></a>
+            <a id = "H3" ></a>
+            <a id = "I3" ></a>
+            <a id = "J3" ></a>
+            <b type="button">4</b>
+            <a id = "A4" ></a>
+            <a id = "B4" ></a>
+            <a id = "C4" ></a>
+            <a id = "D4" ></a>
+            <a id = "E4" ></a>
+            <a id = "F4" ></a>
+            <a id = "G4" ></a>
+            <a id = "H4" ></a>
+            <a id = "I4" ></a>
+            <a id = "J4" ></a>
+            <b type="button">5</b>
+            <a id = "A5" ></a>
+            <a id = "B5" ></a>
+            <a id = "C5" ></a>
+            <a id = "D5" ></a>
+            <a id = "E5" ></a>
+            <a id = "F5" ></a>
+            <a id = "G5" ></a>
+            <a id = "H5" ></a>
+            <a id = "I5" ></a>
+            <a id = "J5" ></a>
+            <b type="button">6</b>
+            <a id = "A6" ></a>
+            <a id = "B6" ></a>
+            <a id = "C6" ></a>
+            <a id = "D6" ></a>
+            <a id = "E6" ></a>
+            <a id = "F6" ></a>
+            <a id = "G6" ></a>
+            <a id = "H6" ></a>
+            <a id = "I6" ></a>
+            <a id = "J6" ></a>
+            <b type="button">7</b>
+            <a id = "A7" ></a>
+            <a id = "B7" ></a>
+            <a id = "C7" ></a>
+            <a id = "D7" ></a>
+            <a id = "E7" ></a>
+            <a id = "F7" ></a>
+            <a id = "G7" ></a>
+            <a id = "H7" ></a>
+            <a id = "I7" ></a>
+            <a id = "J7" ></a>
+            <b type="button">8</b>
+            <a id = "A8" ></a>
+            <a id = "B8" ></a>
+            <a id = "C8" ></a>
+            <a id = "D8" ></a>
+            <a id = "E8" ></a>
+            <a id = "F8" ></a>
+            <a id = "G8" ></a>
+            <a id = "H8" ></a>
+            <a id = "I8" ></a>
+            <a id = "J8" ></a>
+            <b type="button">9</b>
+            <a id = "A9" ></a>
+            <a id = "B9" ></a>
+            <a id = "C9" ></a>
+            <a id = "D9" ></a>
+            <a id = "E9" ></a>
+            <a id = "F9" ></a>
+            <a id = "G9" ></a>
+            <a id = "H9" ></a>
+            <a id = "I9" ></a>
+            <a id = "J9" ></a>
+            <b type="button">10</b>
+            <a id = "A10" ></a>
+            <a id = "B10" ></a>
+            <a id = "C10" ></a>
+            <a id = "D10" ></a>
+            <a id = "E10" ></a>
+            <a id = "F10" ></a>
+            <a id = "G10" ></a>
+            <a id = "H10" ></a>
+            <a id = "I10" ></a>
+            <a id = "J10" ></a>
+        </div>
+        <div class="button-container mr-2">
+            <b type="button"></b>
+            <b type="button">A</b>
+            <b type="button">B</b>
+            <b type="button">C</b>
+            <b type="button">D</b>
+            <b type="button">E</b>
+            <b type="button">F</b>
+            <b type="button">G</b>
+            <b type="button">H</b>
+            <b type="button">I</b>
+            <b type="button">J</b>
+            <b type="button">1</b>
+            <a id = "A1-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "B1-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "C1-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "D1-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "E1-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "F1-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "G1-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "H1-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "I1-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "J1-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <b type="button">2</b>
+            <a id = "A2-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "B2-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "C2-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "D2-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "E2-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "F2-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "G2-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "H2-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "I2-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "J2-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <b type="button">3</b>
+            <a id = "A3-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "B3-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "C3-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "D3-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "E3-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "F3-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "G3-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "H3-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "I3-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "J3-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <b type="button">4</b>
+            <a id = "A4-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "B4-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "C4-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "D4-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "E4-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "F4-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "G4-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "H4-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "I4-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "J4-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <b type="button">5</b>
+            <a id = "A5-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "B5-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "C5-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "D5-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "E5-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "F5-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "G5-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "H5-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "I5-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "J5-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <b type="button">6</b>
+            <a id = "A6-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "B6-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "C6-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "D6-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "E6-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "F6-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "G6-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "H6-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "I6-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "J6-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <b type="button">7</b>
+            <a id = "A7-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "B7-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "C7-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "D7-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "E7-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "F7-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "G7-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "H7-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "I7-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "J7-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <b type="button">8</b>
+            <a id = "A8-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "B8-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "C8-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "D8-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "E8-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "F8-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "G8-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "H8-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "I8-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "J8-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <b type="button">9</b>
+            <a id = "A9-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "B9-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "C9-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "D9-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "E9-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "F9-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "G9-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "H9-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "I9-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "J9-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <b type="button">10</b>
+            <a id = "A10-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "B10-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "C10-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "D10-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "E10-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "F10-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "G10-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "H10-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "I10-AI" onclick="get_triviadb(); selected_button(this)" type="button"  ></a>
+            <a id = "J10-AI" onclick="get_triviadb(); selected_button(this)" type="button"></a>
+        </div>
+        <div><button id="navbutton2" class="btn htb-button" onclick="openNav2()">&#9875; Enemy Ships</button></div>
+    </div>
+    <div class="footer mt-2">
+        <div class="container text-center">
+            <button onclick="startbutton()" class="btn htb-button mr-1" type="Place Ship" id="start-button">Start Game</button>
+            <form action="/updatabase" method="POST" style="display: inline;" id="end-game-form">
+                <button class="btn htb-button mr-1" onclick="end_game()" id="endGameButton">End Game</button>
+                <input id="correct" name="correct" style="display: none">
+                <input id="questionsanswered" name="questionsanswered" style="display: none">
+                <input id="won" name="won" style="display: none">
+            </form>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal hide fade in" id="triviaModal" tabindex="-1" data-keyboard="false" data-backdrop="static" role="dialog" aria-labelledby="triviaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="mtitle" id="triviaModalLabel"></h5>
+                </div>
+                <div class="modal-body text-light">
+                    <form>
+                        <input type="radio" name="trivia_radio" value="1" id="qRadio1"/><span id="qText1" class="pl-2"></span> <br>
+                        <input type="radio" name="trivia_radio" value="2" id="qRadio2"/><span id="qText2" class="pl-2"></span> <br>
+                        <input type="radio" name="trivia_radio" value="3" id="qRadio3"/><span id="qText3" class="pl-2"></span> <br>
+                        <input type="radio" name="trivia_radio" value="4" id="qRadio4"/><span id="qText4" class="pl-2"></span>
+                    </form>
+                    <span id="correct-incorrect"></span>
+                </div>
+                <div class="modal-footer text-light">
+                    <button onclick="validate_answer()" class="btn htb-button" id="submit-button" type="Place Ship" id="Place Ship-button">Submit</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="hover_bkgr_fricc2" id="popups">
+        <span class="helper"></span>
+        <div>
+            <div class="popupCloseButton">&times;</div>
+            <h1 id = "popfill"></h1>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="js/battleship.js">
+        var userID = '<%- JSON.stringify(id) %>';
+    </script>
+    
+</body>
+
+<%- include('partials/footer') %>

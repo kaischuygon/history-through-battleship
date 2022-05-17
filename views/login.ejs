@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+<body class="center text-center">
+    <div class="text-box">
+        <h1>Sign in</h1>
+        <form class="form-signin" action="/login" method="POST">
+            <input name="username" type="text" id="inputUsername" class="form-control mb-2" placeholder="Username" required autofocus>
+            <input name="password" type="password" id="inputPassword" class="form-control mb-2" placeholder="Password" required>
+
+            <button class="btn btn-lg htb-button" type="submit">Sign in</button>
+        </form>
+        <div class="mt-2">
+            <span class="font-sm">Don't have an account? <a href="/register" class="htb-a">Register</a></span>
+        </div>
+    </div>
+</body>
+
+<%- include('partials/footer') %>

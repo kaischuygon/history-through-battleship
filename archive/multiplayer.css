@@ -1,0 +1,571 @@
+/* multiplayer.css and battleship.css have been merged, multiplayer .ejs is using battleship.css */
+
+.button-container, .button-container-player {
+    width: calc(var(--width) / 2);
+    height: calc(var(--width) / 2);
+    display: grid;
+    grid-template-columns: repeat(11,1fr);
+    grid-template-rows: repeat(11,1fr);
+    border-right: 0.4vw solid #800000;
+    border-bottom: 0.4vw solid #800000;
+    opacity: .8;
+    background-image: url("https://t3.ftcdn.net/jpg/02/46/36/00/360_F_246360083_AZXHx2HaOUAr3Tck7pHiGGZHITiU9se9.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.button-container-player2 {
+    display: grid;  
+    -ms-transform: translateY(-9%);
+    transform: translateY(-9%);
+    grid-template-columns: repeat(11,1fr);
+    grid-template-rows: repeat(11,1fr);
+    margin-left: 1%;
+    opacity: .8;
+    width: 90vw;
+    float:left;
+    height:90vh;
+    border-style:solid;
+    border-color:#800000;
+    border-width: 0.2%;
+    background-image: url("https://t3.ftcdn.net/jpg/02/46/36/00/360_F_246360083_AZXHx2HaOUAr3Tck7pHiGGZHITiU9se9.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: hidden;
+}
+
+.button-container-player1 {
+    display: grid;  
+    margin-left: 19.5%;
+    -ms-transform: translateY(-9%);
+    transform: translateY(-9%);
+    grid-template-columns: repeat(11,1fr);
+    grid-template-rows: repeat(11,1fr);
+    opacity: .8;
+    float:left;
+    width: 90vw;
+    height:90vh;
+    border-style:solid;
+    border-color:#800000;
+    border-width: 0.2%;
+    background-image: url("https://t3.ftcdn.net/jpg/02/46/36/00/360_F_246360083_AZXHx2HaOUAr3Tck7pHiGGZHITiU9se9.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: hidden;
+}
+
+.content {
+  display: inline;
+}
+.button-container-player1 > a, b {
+    width: 100%;
+    height: 100%;
+    border-style:solid;
+    border-color:#800000;
+    border-width: 0.1%;
+
+}
+
+.button-container-player1 > b {
+    color: white;
+    font-size: 4vw;
+    border-width: 0.1%;
+    text-align: center;
+}
+
+.button-container-player1 > a:hover {
+    opacity: 100;
+    background-color: black;
+}
+
+.button-container-player2 > a, b {
+    width: 100%;
+    height: 100%;
+    border-style:solid;
+    border-color:#800000;
+    border-width: 0.1%;
+    margin: 0px;
+}
+
+.button-container-player2 > b {
+    color: white;
+    font-size: 4vw;
+    text-align: center;
+}
+
+.button-container-player2 > a:hover {
+    opacity: 100;
+    background-color: black;
+}
+
+
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: black;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+.hover_bkgr_fricc2{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc2 .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc2 > div {
+    background-color: black;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+.popupCloseButton3 {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton3:hover {
+    background-color: #ccc;
+}
+.trigger_popup_fricc {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.button-container-player2 > a:hover {
+    opacity: 100;
+}
+
+#ships {
+    position: relative;
+    font-size: 400%;
+    color:burlywood;
+    font-family: Impact, burlywood, sans-serif
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  background-color: burlywood;
+  opacity: 1; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+#navbutton, #navbutton2 {
+    color:burlywood;
+    font-family: Impact, burlywood, sans-serif
+}
+
+#mySidenav {
+    left: 0;
+}
+
+#mySidenav2 {
+    right: 0;
+}
+
+#navships {
+    color:black;
+    font-size: 200%;
+    margin-left: 75px;
+    font-family: Impact, burlywood, sans-serif
+}
+
+#navshipshead {
+    color:black;
+    text-decoration: underline;
+    font-size: 300%;
+    margin-left: 75px;
+    font-family: Impact, burlywood, sans-serif
+}
+
+.ship {
+    width: 20%;
+    height: 20%;
+    margin-left: 50px;
+}
+
+#ship1 {
+    width: 20%;
+    height: 10%;
+    margin-left: 50px;
+}
+
+#ship1Player2
+{
+    width: 20%;
+    height: 10%;
+    margin-left: 50px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.grid-col-2 {
+    grid-column: span 2;
+}
+
+.grid-col-8 {
+    grid-column: span 8;
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1223px) {
+    .button-container-player1 {
+        width: 30vw;
+        height:30vw;
+    }
+
+    .button-container-player1 > b {
+
+        font-size: 1.5vw;
+    }
+
+    .button-container-player2 {
+        width: 30vw;
+        height:30vw;
+    }
+
+    .button-container-player2 > b {
+
+        font-size: 1.5vw;
+    }
+
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    .button-container-player1 {
+        width: 30vw;
+        height:30vw;
+    }
+
+    .button-container-player1 > b {
+        font-size: 1.5vw;
+    }
+
+    .button-container-player2 {
+        width: 30vw;
+        height:30vw;
+    }
+
+    .button-container-player2 > b {
+        font-size: 1.5vw;
+    }
+}
+@media only screen and (min-width : 0px) {
+  .button-container-player1 {
+      width: 30vw;
+      height:30vw;
+  }
+
+  .button-container-player1 > b {
+      font-size: 1.5vw;
+  }
+
+  .button-container-player2 {
+      width: 30vw;
+      height:30vw;
+  }
+
+  .button-container-player2 > b {
+      font-size: 1.5vw;
+  }
+}
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+    .button-container-player1 {
+        width: 30vw;
+        height:30vw;
+    }
+
+    .button-container-player1 > b {
+        font-size: 1.5vw;
+    }
+
+    .button-container-player2 {
+        width: 30vw;
+        height:30vw;
+    }
+
+    .button-container-player2 > b {
+        font-size: 1.5vw;
+    }
+}
+
+
+#pick-ship1 {
+  margin-left: 40px;
+}
+
+#pick-ship2 {
+  margin-left: 40px;
+}
+
+#pick-ship3 {
+  margin-left: 40px;
+}
+
+#pick-ship4 {
+  margin-left: 40px;
+}
+
+#pick-ship1-button1 {
+  margin-left: 40px;
+}
+
+#pick-ship1-button2 {
+  margin-left: 40px;
+}
+#pick-ship1-button2-2 {
+  margin-left: 40px;
+}
+
+#pick-ship1-button3 {
+  margin-left: 40px;
+}
+
+#pick-ship1-button4 {
+  margin-left: 40px;
+}
+
+
+
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: black;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+.trigger_popup_fricc {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.htb-button-start {
+    color: burlywood;
+    border-color: #800000;
+    background-color: #800000;
+    font-family: Impact, sans-serif;
+    text-align: center;
+    font-size: 1vw;
+    width:10vw;
+    margin-top: 1%;
+    margin-bottom: 0%;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+  }
+.htb-button-start:hover, .htb-button-start-xl:hover, .htb-button-start-lg:hover {
+    background-color: #900000;
+    color: wheat;
+}
+
+.hover_bkgr_fricc3{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc3 .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc3 > div {
+    background-color: black;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}

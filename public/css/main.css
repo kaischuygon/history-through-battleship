@@ -1,0 +1,188 @@
+:root {
+    --width: min(90vw, 90vh);
+}
+
+@font-face {
+    font-family: Machine;
+    src: url(../font/MachineStd.otf);
+}
+
+.user {
+    width: 100%;
+    background-color: rgba(222, 184, 135, 0.5);
+    padding: 1vh;
+    margin-bottom: 1vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #800000;
+}
+
+.alert-wrapper {
+    position: absolute;
+    bottom: 2vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.alert {
+    background-color: rgba(128, 0, 0, 0.5);
+    border: none;
+    width: max-content;
+    color: burlywood;
+}
+
+.close:hover { color: burlywood; }
+
+body {
+    background: url(https://thumbs.gfycat.com/HonestCelebratedEland-size_restricted.gif) no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Big Shoulders Stencil Text', sans-serif;
+    margin: 0;
+}
+
+.htb-title {
+    color: burlywood;
+    font-size: calc(var(--width) / 12);
+    text-align: center;
+    font-family: Machine, sans-serif;
+    margin: 0;
+}
+
+.htb-logo {
+    display: block;
+    width: calc(var(--width) * 0.75);
+    margin: 1vh auto;
+}
+
+.text-box {
+    text-align: center;
+    border: 4px solid #800000;
+ 	background-color:rgba(0, 0, 0, 0.7);
+    color: whitesmoke;
+    margin: 10px auto;
+    padding: 10px;
+    width: var(--width);
+}
+
+.text-box h1, h2 {
+    font-family: Machine, sans-serif;
+    color: burlywood;
+}
+
+.htb-button {
+    color: burlywood;
+    border-color: #800000;
+    background-color: #800000;
+    text-align: center;
+}
+
+.htb-button:hover, .htb-button-xl:hover, .htb-button-lg:hover {
+    background-color: #900000;
+    color: wheat;
+}
+
+.form-group {
+    border-color: #800000;
+    font-family: Machine, sans-serif;
+    text-align: center;
+}
+
+.font-xl {    
+    font-size: calc(var(--width) / 15);
+}
+
+.font-lg {
+    font-size: calc(var(--width) / 20);
+}
+
+.font-md {
+    font-size: calc(var(--width) / 30);
+}
+
+.font-sm {
+    font-size: calc(var(--width) / 40);
+}
+
+.htb-red-text {
+    color: #800000;
+}
+
+.htb-yellow-text {
+    color: burlywood;
+}
+
+.htb-white-text {
+    color: whitesmoke;
+}
+
+.htb-a {
+    color: #800000;
+}
+
+.htb-a:hover {
+    color: #900000;
+}
+
+#sound-on-off-label {
+    margin-left: 0.5em;
+    /* font-size: 2em; */
+}
+
+#sound-on-radio, #sound-off-radio {
+    transform: scale(2);
+}
+
+.box-hit {
+    background-image: url('https://i.gifer.com/WwaK.gif');
+    background-size: 100% 100%;
+}
+
+.box-miss {
+    background-image: url(../img/miss.gif);
+    background-size: 100% 100%;
+}
+
+.mtitle {
+    color: burlywood;
+    font-family: Machine, sans-serif;
+}
+
+.modal-content {
+    border: 3px solid #800000 !important;
+    border-radius: 0 !important;
+    background-color: black !important;
+    opacity: 0.7 !important;
+}
+
+.modal-content2 {
+    border: 3px solid #800000 !important;
+    border-radius: 0 !important;
+    background-color: black !important;
+    opacity: 1 !important;
+}
+
+#correct-incorrect {
+    font-size: 2em;
+}
+
+.btn:focus, .form-control:focus {
+    border-color: #900000;
+    box-shadow: 0 0 0 0.2rem rgba(144, 0, 0, 0.5);
+} 
+
+.form-control {
+    background-color: burlywood !important;
+    border: 2px solid #800000 !important;
+    color: #800000 !important;
+}
+
+.form-control::placeholder {
+    color: #800000 !important;
+}
+
+/* safari*/
+[type=button] {
+    -webkit-appearance: none;
+}

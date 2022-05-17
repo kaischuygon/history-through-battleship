@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+
+<body>
+  <div class="text-box">
+
+    <h1 class="font-lg">Account Settings</h1>
+
+    <h3 class="text-left font-md">Change Password:</h3>
+    <form class="form-signin" action="/updpass" method="POST">
+      <div class="row my-2">
+        <div class="col">
+          <input name="password" id="password" type="password" class="form-control" placeholder="Enter current password">
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col">
+          <input name="newpass" id="newpass" type="password" class="form-control" placeholder="Enter new password">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-10 mb-2">
+          <input name="newpassconf" id="newpassconf" type="password" class="form-control" placeholder="Confirm new password">
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn htb-button w-100">Submit</button>
+        </div>
+      </div>
+    </form>
+    <hr style="background-color: burlywood;">
+    <div class="text-right">
+      <form action="/deleteacct" method="POST">
+        <span>warning: this action is permanent</span>
+        <button class="btn htb-button ml-2" type="submit">Delete Account</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+<%- include('partials/footer') %>
